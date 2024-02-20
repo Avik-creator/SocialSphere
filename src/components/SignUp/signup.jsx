@@ -4,7 +4,7 @@ import "../../components/Login/login.scss";
 import photo from "../../assets/photo.png";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { sinupUser } from "../../actions/User";
+import { signup } from "../../actions/User";
 import { useSelector } from "react-redux";
 import Spinner from "../Spinner/Spinner";
 import Loader from "../Spinner/Loader";
@@ -34,7 +34,7 @@ const SignUp = () => {
         "Password must be at least 6 characters long and must contain at least one number and one special character."
       );
     } else {
-      await dispatch(sinupUser(name, userName, email, password));
+      await dispatch(signup(name, userName, email, password));
 
       setName(name);
       setEmail(email);

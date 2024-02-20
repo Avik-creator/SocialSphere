@@ -6,7 +6,7 @@ import PostSection from "./components/ProfilePage/PostSection";
 import Login from "./components/Login/Login";
 import ForgotPassword from "./components/Change Password/ForgotPassword";
 import ChangePassword from "./components/Change Password/ChangePassword";
-import SingUp from "./components/SignUp/SingUp";
+import SignUp from "./components/SignUp/signup";
 import Verification from "./components/Otp/Verification";
 import AddDetails from "./components/Add Details/AddDetails";
 import Users from "./components/UserProfile/UserProfile";
@@ -76,11 +76,11 @@ function App() {
           path="/post/:id"
           element={isAuthenticated ? <Comment /> : <Login />}
         />
-        <Route exact path="/signup" element={<SingUp />} />
+        <Route exact path="/signup" element={<SignUp />} />
         <Route
           exact
           path="/verify"
-          element={isRedirect ? <Verification /> : <SingUp />}
+          element={isRedirect ? <Verification /> : <SignUp />}
         />
         <Route
           exact

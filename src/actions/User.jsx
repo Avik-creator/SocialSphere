@@ -2,40 +2,39 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { server } from "../main";
 
-export const sinupUser =
-  (name, userName, email, password) => async (dispatch) => {
-    try {
-      dispatch({
-        type: "OtpRequest",
-      });
-      const { data } = await axios.post(
-        `${server}/user/register`,
-        {
-          name,
-          userName,
-          email,
-          password,
+export const signup = (name, userName, email, password) => async (dispatch) => {
+  try {
+    dispatch({
+      type: "OtpRequest",
+    });
+    const { data } = await axios.post(
+      `${server}/user/register`,
+      {
+        name,
+        userName,
+        email,
+        password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
-      dispatch({
-        type: "OtpSuccess",
-        payload: data.message,
-      });
-      toast.success(data.message);
-    } catch (error) {
-      dispatch({
-        type: "OtpFailure",
-        payload: error.response.data.message,
-      });
-      toast.error(error.response.data.message);
-    }
-  };
+        withCredentials: true,
+      }
+    );
+    dispatch({
+      type: "OtpSuccess",
+      payload: data.message,
+    });
+    toast.success(data.message);
+  } catch (error) {
+    dispatch({
+      type: "OtpFailure",
+      payload: error.response.data.message,
+    });
+    toast.error(error.response.data.message);
+  }
+};
 
 export const verifyOtp = (otp) => async (dispatch) => {
   try {
