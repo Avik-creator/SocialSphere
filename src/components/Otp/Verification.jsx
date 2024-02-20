@@ -15,7 +15,7 @@ const Verification = () => {
   const [otp, setOtp] = useState("");
   const hanldeVerify = async (e) => {
     e.preventDefault();
-    await dispatch(verifyOtp(otp));
+    dispatch(verifyOtp(otp));
     navigate("/details");
   };
 

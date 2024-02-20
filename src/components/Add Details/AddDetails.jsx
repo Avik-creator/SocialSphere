@@ -37,7 +37,7 @@ const AddDetails = () => {
     formData.append("link", link);
     formData.append("file", image);
 
-    await dispatch(editUser(formData));
+    dispatch(editUser(formData));
     navigate("/");
   };
 

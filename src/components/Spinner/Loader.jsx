@@ -1,5 +1,5 @@
 import React from "react";
-import buttonSpin from "../../assets/button-spinner.gif";
+import buttonSpin from "../../assets/Globeframe.gif";
 
 const Loader = () => {
   return (

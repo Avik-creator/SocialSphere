@@ -77,7 +77,7 @@ const PostBody = ({
 
   const handleLikeClick = async () => {
     dispatch(setProgress(10));
-    await dispatch(likePost(postId));
+    dispatch(likePost(postId));
     dispatch(setProgress(10));
     dispatch(getAllPost());
     dispatch(setProgress(100));
@@ -90,9 +90,9 @@ const PostBody = ({
 
   const handleComment = async () => {
     dispatch(setProgress(10));
-    await dispatch(commentPost({ postId, comment }));
+    dispatch(commentPost({ postId, comment }));
     dispatch(setProgress(50));
-    await dispatch(getPostById(postId));
+    dispatch(getPostById(postId));
     navigate(`/post/${postId}`);
     dispatch(setProgress(80));
     setIsCommentOpen((prevState) => !prevState);
@@ -109,7 +109,7 @@ const PostBody = ({
     dispatch(setProgress(100));
   };
   const postIsBookmarked = user.bookmarks.some(
-    (bookmark) => bookmark._id === postId,
+    (bookmark) => bookmark._id === postId
   );
 
   const handleDelete = async () => {

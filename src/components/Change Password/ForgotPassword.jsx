@@ -11,7 +11,7 @@ const ForgotPassword = () => {
 
   const handleForgot = async (e) => {
     e.preventDefault();
-    await dispatch(forgotPassword(email));
+    dispatch(forgotPassword(email));
     navigate("/changePassword");
   };
 

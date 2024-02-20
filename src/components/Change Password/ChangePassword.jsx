@@ -26,7 +26,7 @@ const ChangePassword = () => {
         "New password must be at least 6 characters long and must contain at least one number and one special character."
       );
     } else {
-      await dispatch(changePassword(userName, otp, newPassword));
+      dispatch(changePassword(userName, otp, newPassword));
       navigate("/");
     }
   };

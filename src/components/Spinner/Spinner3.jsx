@@ -1,5 +1,5 @@
 import React from "react";
-import loader from "../../assets/infinite.gif";
+import loader from "../../assets/Soccerball.gif";
 
 const Spinner3 = () => {
   return (

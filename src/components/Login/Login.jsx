@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await dispatch(loginUser(loginIdentifier, password));
+    dispatch(loginUser(loginIdentifier, password));
     dispatch(loadUser());
   };
 

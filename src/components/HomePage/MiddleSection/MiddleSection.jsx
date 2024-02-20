@@ -14,7 +14,7 @@ const MiddleSection = () => {
   const dispatch = useDispatch();
   const { post, loading: postLoading } = useSelector((state) => state.post);
   const { posts, loading: followingpostsLoading } = useSelector(
-    (state) => state.followingPosts,
+    (state) => state.followingPosts
   );
 
   const handleAllPosts = () => {
